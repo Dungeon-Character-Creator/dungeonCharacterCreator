@@ -210,6 +210,7 @@ template {
 
 html {
   font-size: 125%;
+  font-family: "Cinzel Decorative", cursive;
 }
 
 h1, h2 {
@@ -226,6 +227,39 @@ li {
   list-style-type: none;
 }
 
+button, input {
+  font-family: "Cinzel Decorative", cursive;
+}
+
+main {
+  background-color: #546150;
+  height: 70vh;
+}
+
+form, fieldset {
+  border: none;
+}
+
+header {
+  background-image: url(../assets/heroimage-dnd.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 30vh;
+}
+
 h1, h2 {
   font-family: "Cinzel Decorative", cursive;
+  color: white;
+}
+
+h1 {
+  padding-top: 40px;
+}
+
+h1 span {
+  color: red;
+}
+
+.userSelection {
+  text-align: center;
 }

@@ -6,6 +6,7 @@
 
 html {
     font-size: 125%;
+    font-family: 'Cinzel Decorative', cursive;
 }
 
 h1, h2 {
@@ -21,3 +22,14 @@ ul {
 li {
     list-style-type: none;
 }
+button, input {
+    font-family: 'Cinzel Decorative', cursive;
+}
+main {
+    background-color: #546150;
+    height: 70vh;   
+}
+form, fieldset {
+    border: none;
+}
+

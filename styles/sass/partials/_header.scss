@@ -1,4 +1,17 @@
-
+header {
+    background-image: url(../assets/heroimage-dnd.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 30vh;
+}
 h1, h2 {
     font-family: 'Cinzel Decorative', cursive;
+    color: white;
 }
+h1 {
+    padding-top: 40px;
+}
+h1 span {
+    color: red;
+}
+
