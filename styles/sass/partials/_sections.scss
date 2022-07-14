@@ -1,0 +1,20 @@
+.characterCard{
+    background-image: url(../assets/vintage-grunge-paper-background.jpg);
+    height:40vh;
+    width:60%;
+    border-radius: 20px;
+    margin: 20px;
+    padding:20px 0 0 20px;
+    box-shadow: 10px 5px 5px black;
+    h3{
+        padding: 10px 0;
+    }
+}
+
+
+main .wrapper{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}

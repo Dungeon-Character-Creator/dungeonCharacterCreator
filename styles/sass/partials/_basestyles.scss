@@ -9,9 +9,17 @@ html {
     font-family: 'Cinzel Decorative', cursive;
 }
 
-h1, h2 {
+h1, h2, h3 {
     margin: 0;
     padding: 0;
+}
+h3{ 
+    font-family: 'Tangerine', cursive;
+    font-size: 2rem;
+}
+p{
+    font-family: 'Tangerine', cursive;
+    font-size: 1.8rem;
 }
 
 ul {
