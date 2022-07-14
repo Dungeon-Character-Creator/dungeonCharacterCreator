@@ -7,9 +7,42 @@
     <title>Document</title>
 </head>
 <body>
+    <header>
+        <div class="wrapper">
+            <h1>Dungeons and Dragon Character Creator!</h1>
+            <h2>The best in business</h2>
+        </div>
+    </header>
+    <main>
+        <div class="wrapper">
+
+            <div class="characterCard">
+                <!-- java will generate here -->
+                
+            </div>
+
+            <form action="">
+                <input type="text" placeholder="your name goes here">
+                <fieldset>
+                    <label for="className">Pick your class</label>
+                    <select name="" id="">
+                        <!-- class names will populate -->
+
+                    </select>
+                </fieldset>
+
+                <button>Start your Journey</button>
+            </form>
+        </div>
+    </main>
+
+
+
+
     <script>
+        const url = "https://api.open5e.com/backgrounds/"
         
-            fetch('https://api.open5e.com/backgrounds/')
+            fetch(url)
                     .then(function (response) {
                         return response.json();
                     })
