@@ -1,31 +1,50 @@
-// step 1
-const url = "https://api.open5e.com/backgrounds/"
-        
-fetch(url)
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (jsonResult) {
-            console.log(jsonResult.results);
-        })
-
 // create namespace
 const dungeonApp = {};
 
-// create an eventListener for select input and put in variable
-const userOptions = document.querySelector("#userClass");
-
 // create a method to populate classOptions for the user to select
 
-dungeonApp.userClass = function(jsonResult){
-    jsonResult.results.forEach(function (name) {
-        console.log(name);
-    })
-}
+
+
+
+
+
+dungeonApp.getName = function(){
+    // step 1
+    const url = "https://api.open5e.com/backgrounds/"
+
+    fetch(url)
+        .then(function (response) {
+            console.log(response)
+            return response.json();
+            
+        })
+        .then(function (jsonResult) {
+            console.log(jsonResult.results)
+            
+
+            jsonResult.results.forEach(classes => {
+                // create an eventListener for select input and put in variable
+                const userOptions = document.querySelector("#userClass");
+                
+                const optionEl = document.createElement("option")
+
+                optionEl.textContent = classes.name
+                console.log(classes.name)
+
+                userOptions.appendChild(optionEl)
+            })
+            return jsonResult.results;
+
+        })
+
+    
+    }
+        
+
 
 // init Method
 dungeonApp.init = function(){
-    dungeonApp.userClass()
+    dungeonApp.getName()
 }
 
 // Step 1
