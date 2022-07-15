@@ -20,32 +20,48 @@ dungeonApp.getName = function(){
         })
         .then(function (jsonResult) {
             console.log(jsonResult.results)
-            
-
-            jsonResult.results.forEach(classes => {
-                // create an eventListener for select input and put in variable
-                const userOptions = document.querySelector("#userClass");
-                
-                const optionEl = document.createElement("option")
-
-                optionEl.textContent = classes.name
-                console.log(classes.name)
-
-                userOptions.appendChild(optionEl)
-            })
+            const userArray = jsonResult.results[2];
+            console.log(userArray);
+            dungeonApp.displayClasses(jsonResult.results);
             return jsonResult.results;
-
         })
-
-    
     }
-        
+    
+    dungeonApp.displayClasses = function(names){
+        names.forEach(classes => {
+            // create an eventListener for select input and put in variable
+            const userOptions = document.querySelector("#userClass");
+            console.log(userOptions);
+            const optionEl = document.createElement("option")
+            const classOption = document.querySelector('option');
+            optionEl.textContent = classes.name
+
+            
+            userOptions.appendChild(optionEl)
+            const buttonEl = document.querySelector('button');
+            
+            buttonEl.addEventListener('click', function(e){
+                e.preventDefault()
+                const inputEL = document.querySelector('input')
+                console.log(inputEL.value);
+                const nameChoice = document.querySelector('.userName');
+                const pEl = document.createElement('p');
+                pEl.textContent = nameChoice;
+                nameChoice.innerHTML = `<h3>Name:</h3> <p>${inputEL.value}</p>`;
+                const classChoice = document.querySelector('.className');
+                classChoice.innerHTML = `<h3>Class:</h3> <p>${userOptions.value}</p>`;
+            })
+        })
+    }
+
+
 
 
 // init Method
 dungeonApp.init = function(){
-    dungeonApp.getName()
+    dungeonApp.getName();
 }
+
 
 // Step 1
 // Create name space for our app

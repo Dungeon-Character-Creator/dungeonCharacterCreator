@@ -221,11 +221,15 @@ h1, h2, h3 {
 h3 {
   font-family: "Tangerine", cursive;
   font-size: 2rem;
+  display: inline;
 }
 
 p {
   font-family: "Tangerine", cursive;
   font-size: 1.8rem;
+  display: inline;
+  margin: 0;
+  padding: 0;
 }
 
 ul {
@@ -235,6 +239,12 @@ ul {
 
 li {
   list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 button, input {
