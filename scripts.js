@@ -14,14 +14,14 @@ dungeonApp.getName = function(){
 
     fetch(url)
         .then(function (response) {
-            console.log(response)
+            // console.log(response)
             return response.json();
             
         })
         .then(function (jsonResult) {
-            console.log(jsonResult.results)
-            const userArray = jsonResult.results[2];
-            console.log(userArray);
+            // console.log(jsonResult.results)
+            const userArray = jsonResult.results;
+            // console.log(userArray);
             dungeonApp.displayClasses(jsonResult.results);
             return jsonResult.results;
         })
@@ -31,30 +31,45 @@ dungeonApp.getName = function(){
         names.forEach(classes => {
             // create an eventListener for select input and put in variable
             const userOptions = document.querySelector("#userClass");
-            console.log(userOptions);
             const optionEl = document.createElement("option")
             const classOption = document.querySelector('option');
             optionEl.textContent = classes.name
 
-            
             userOptions.appendChild(optionEl)
             const buttonEl = document.querySelector('button');
             
             buttonEl.addEventListener('click', function(e){
                 e.preventDefault()
                 const inputEL = document.querySelector('input')
-                console.log(inputEL.value);
+                // console.log(inputEL.value);
                 const nameChoice = document.querySelector('.userName');
                 const pEl = document.createElement('p');
                 pEl.textContent = nameChoice;
                 nameChoice.innerHTML = `<h3>Name:</h3> <p>${inputEL.value}</p>`;
                 const classChoice = document.querySelector('.className');
                 classChoice.innerHTML = `<h3>Class:</h3> <p>${userOptions.value}</p>`;
+
+                const skillsEl = document.querySelector(".skills")
+                const backstoryEl = document.querySelector(".backstory")
+
+                if(userOptions.value === "Acolyte"){
+                    skillsEl.innerHTML = `<h3>Skills:</h3> <p>${names[0].skill_proficiencies}</p>`
+                    backstoryEl.innerHTML = `<h3>Backstory:</h3> <p>${names[0].feature_desc}</p>`
+
+                }else if(userOptions.value === "Con Artist"){
+                    skillsEl.innerHTML = `<h3>Skills:</h3> <p>${names[1].skill_proficiencies}</p>`
+                    backstoryEl.innerHTML = `<h3>Backstory:</h3> <p>${names[1].feature_desc}</p>`
+                }else {
+                    skillsEl.innerHTML = `<h3>Skills:</h3> <p>${names[2].skill_proficiencies}</p>`
+                    backstoryEl.innerHTML = `<h3>Backstory:</h3> <p>${names[2].feature_desc}</p>`
+                }
+                    
+                
             })
+            // const userArray = userOptions;
+            // console.log(userArray)
         })
     }
-
-
 
 
 // init Method
