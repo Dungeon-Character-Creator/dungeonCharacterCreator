@@ -25,6 +25,7 @@ dungeonApp.getName = function(){
             dungeonApp.displayClasses(jsonResult.results);
             return jsonResult.results;
         })
+        
     }
     
     dungeonApp.displayClasses = function(names){
@@ -63,8 +64,6 @@ dungeonApp.getName = function(){
                     skillsEl.innerHTML = `<h3>Skills:</h3> <p>${names[2].skill_proficiencies}</p>`
                     backstoryEl.innerHTML = `<h3>Backstory:</h3> <p>${names[2].feature_desc}</p>`
                 }
-                    
-                
             })
             // const userArray = userOptions;
             // console.log(userArray)

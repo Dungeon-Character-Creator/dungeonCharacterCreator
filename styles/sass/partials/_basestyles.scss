@@ -40,8 +40,9 @@ button, input {
     font-family: 'Cinzel Decorative', cursive;
 }
 main {
-    background-color: #546150;
-    height: 70vh;   
+    // background-color: #546150;
+    background: linear-gradient(0deg, #8b0000,#CC350B 30%,#C16D42 50% orange 70%,#EDBF4A);
+    height: 100%;   
 }
 form, fieldset {
     border: none;

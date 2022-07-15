@@ -252,8 +252,9 @@ button, input {
 }
 
 main {
-  background-color: #546150;
-  height: 70vh;
+  background: -webkit-gradient(linear, left bottom, left top, from(#8b0000), color-stop(30%, #CC350B), color-stop(50%, #C16D42), to(#EDBF4A));
+  background: linear-gradient(0deg, #8b0000, #CC350B 30%, #C16D42 50% orange 70%, #EDBF4A);
+  height: 100%;
 }
 
 form, fieldset {
@@ -284,18 +285,29 @@ h1 span {
   margin: 20px;
 }
 
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+button {
+  margin-top: 10px;
+  width: 100%;
+}
+
 .characterCard {
-  background-image: url(../assets/vintage-grunge-paper-background.jpg);
-  height: 40vh;
-  width: 60%;
+  height: 100%;
+  width: 100%;
+  background-color: grey;
   border-radius: 20px;
   margin: 20px;
-  padding: 20px 0 0 20px;
+  padding: 30px 10px 30px 10px;
   -webkit-box-shadow: 10px 5px 5px black;
           box-shadow: 10px 5px 5px black;
 }
 .characterCard h3 {
-  padding: 10px 0;
+  padding: 10px;
 }
 
 main .wrapper {
@@ -312,4 +324,9 @@ main .wrapper {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.backstory h3 {
+  -ms-flex-item-align: start;
+      align-self: start;
 }

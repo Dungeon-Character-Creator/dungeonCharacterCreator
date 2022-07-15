@@ -1,13 +1,14 @@
 .characterCard{
-    background-image: url(../assets/vintage-grunge-paper-background.jpg);
-    height:40vh;
-    width:60%;
+    // background-image: url(../assets/vintage-grunge-paper-background.jpg);
+    height:100%;
+    width:100%;
+    background-color: grey;
     border-radius: 20px;
     margin: 20px;
-    padding:20px 0 0 20px;
+    padding:30px 10px 30px 10px;
     box-shadow: 10px 5px 5px black;
     h3{
-        padding: 10px 0;
+        padding: 10px;
     }
 }
 
@@ -17,4 +18,8 @@ main .wrapper{
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+}
+
+.backstory h3{
+    align-self: start;
 }
