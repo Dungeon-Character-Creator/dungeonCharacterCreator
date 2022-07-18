@@ -1,12 +1,14 @@
 .characterCard{
     // background-image: url(../assets/vintage-grunge-paper-background.jpg);
-    height:100%;
-    width:100%;
-    background-color: grey;
+    // height:100%;
+    // width:100%;
+    background-color: rgb(55, 70, 55);
     border-radius: 20px;
     margin: 20px;
-    padding:30px 10px 30px 10px;
+    color: white;
+    // padding:30px 10px 30px 10px;
     box-shadow: 10px 5px 5px black;
+    position: relative;
     h3{
         padding: 10px;
     }
@@ -22,4 +24,38 @@ main .wrapper{
 
 .backstory h3{
     align-self: start;
+}
+
+.acolyte {
+    background-image: url(../assets/Acolyte.webp);
+    height: 180px;
+    width: 200px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    position: absolute;
+    top: 11px;
+    right: 0;
+}
+.scoundrel {
+    background-image: url(../assets/scoundrel.jpg);
+    height: 180px;
+    width: 200px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    position: absolute;
+    top: 11px;
+    right: 0;
+}
+.conArtist {
+    background-image: url(../assets/conArtist.jpg);
+    height: 180px;
+    width: 200px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    position: absolute;
+    top: 11px;
+    right: 0;
 }

@@ -254,7 +254,7 @@ button, input {
 main {
   background: -webkit-gradient(linear, left bottom, left top, from(#8b0000), color-stop(30%, #CC350B), color-stop(50%, #C16D42), to(#EDBF4A));
   background: linear-gradient(0deg, #8b0000, #CC350B 30%, #C16D42 50% orange 70%, #EDBF4A);
-  height: 100%;
+  height: 1000px;
 }
 
 form, fieldset {
@@ -294,17 +294,28 @@ h1 span {
 button {
   margin-top: 10px;
   width: 100%;
+  border: none;
+  background-color: rgb(55, 70, 55);
+  color: white;
+  padding: 15px;
+}
+
+select {
+  font-family: "Cinzel Decorative", cursive;
+}
+
+input {
+  border: none;
 }
 
 .characterCard {
-  height: 100%;
-  width: 100%;
-  background-color: grey;
+  background-color: rgb(55, 70, 55);
   border-radius: 20px;
   margin: 20px;
-  padding: 30px 10px 30px 10px;
+  color: white;
   -webkit-box-shadow: 10px 5px 5px black;
           box-shadow: 10px 5px 5px black;
+  position: relative;
 }
 .characterCard h3 {
   padding: 10px;
@@ -329,4 +340,40 @@ main .wrapper {
 .backstory h3 {
   -ms-flex-item-align: start;
       align-self: start;
+}
+
+.acolyte {
+  background-image: url(../assets/Acolyte.webp);
+  height: 180px;
+  width: 200px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  position: absolute;
+  top: 11px;
+  right: 0;
+}
+
+.scoundrel {
+  background-image: url(../assets/scoundrel.jpg);
+  height: 180px;
+  width: 200px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  position: absolute;
+  top: 11px;
+  right: 0;
+}
+
+.conArtist {
+  background-image: url(../assets/conArtist.jpg);
+  height: 180px;
+  width: 200px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  position: absolute;
+  top: 11px;
+  right: 0;
 }

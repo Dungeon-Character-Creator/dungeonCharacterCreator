@@ -23,58 +23,74 @@ dungeonApp.getName = function(){
             const userArray = jsonResult.results;
             // console.log(userArray);
             dungeonApp.displayClasses(jsonResult.results);
+            console.log(jsonResult.results);
             return jsonResult.results;
         })
         
     }
+    const userOptions = document.querySelector("#userClass");
+    const buttonEl = document.querySelector('button');
     
     dungeonApp.displayClasses = function(names){
         names.forEach(classes => {
             // create an eventListener for select input and put in variable
-            const userOptions = document.querySelector("#userClass");
             const optionEl = document.createElement("option")
             const classOption = document.querySelector('option');
             optionEl.textContent = classes.name
-
-            userOptions.appendChild(optionEl)
-            const buttonEl = document.querySelector('button');
-            
-            buttonEl.addEventListener('click', function(e){
-                e.preventDefault()
-                const inputEL = document.querySelector('input')
-                // console.log(inputEL.value);
-                const nameChoice = document.querySelector('.userName');
-                const pEl = document.createElement('p');
-                pEl.textContent = nameChoice;
-                nameChoice.innerHTML = `<h3>Name:</h3> <p>${inputEL.value}</p>`;
-                const classChoice = document.querySelector('.className');
-                classChoice.innerHTML = `<h3>Class:</h3> <p>${userOptions.value}</p>`;
-
-                const skillsEl = document.querySelector(".skills")
-                const backstoryEl = document.querySelector(".backstory")
-
-                if(userOptions.value === "Acolyte"){
-                    skillsEl.innerHTML = `<h3>Skills:</h3> <p>${names[0].skill_proficiencies}</p>`
-                    backstoryEl.innerHTML = `<h3>Backstory:</h3> <p>${names[0].feature_desc}</p>`
-
-                }else if(userOptions.value === "Con Artist"){
-                    skillsEl.innerHTML = `<h3>Skills:</h3> <p>${names[1].skill_proficiencies}</p>`
-                    backstoryEl.innerHTML = `<h3>Backstory:</h3> <p>${names[1].feature_desc}</p>`
-                }else {
-                    skillsEl.innerHTML = `<h3>Skills:</h3> <p>${names[2].skill_proficiencies}</p>`
-                    backstoryEl.innerHTML = `<h3>Backstory:</h3> <p>${names[2].feature_desc}</p>`
-                }
-            })
-            // const userArray = userOptions;
-            // console.log(userArray)
+            userOptions.appendChild(optionEl);
+            const inputEl = document.querySelector('input')
+           dungeonApp.event(names);
         })
     }
 
+    dungeonApp.event = (function(names){
+        buttonEl.addEventListener('click', function(e){
+            e.preventDefault()
+            const inputEL = document.querySelector('input')
+            // console.log(inputEL.value);
+            const nameChoice = document.querySelector('.userName');
+            const pEl = document.createElement('p');
+            pEl.textContent = nameChoice;
+            nameChoice.innerHTML = `<h3>Name:</h3> <p>${inputEL.value}</p>`;
+            const classChoice = document.querySelector('.className');
+            classChoice.innerHTML = `<h3>Class:</h3> <p>${userOptions.value}</p>`;
+    
+            const skillsEl = document.querySelector(".skills")
+            const backstoryEl = document.querySelector(".backstory")
+            const imgCon = document.querySelector('.imageContainer');
 
-// init Method
+
+    
+            if(userOptions.value === "Acolyte"){
+                skillsEl.innerHTML = `<h3>Skills:</h3> <p>${names[0].skill_proficiencies}</p>`
+                backstoryEl.innerHTML = `<h3>Backstory:</h3> <p>${names[0].feature_desc}</p>`
+                imgCon.classList.add('acolyte') && imgCon.classList.remove('scoundrel', "conArtist")
+            }else if(userOptions.value === "Con Artist"){
+                skillsEl.innerHTML = `<h3>Skills:</h3> <p>${names[1].skill_proficiencies}</p>`
+                backstoryEl.innerHTML = `<h3>Backstory:</h3> <p>${names[1].feature_desc}</p>`
+                imgCon.classList.replace('acoltye', 'conArtist') 
+                
+            }else {
+                skillsEl.innerHTML = `<h3>Skills:</h3> <p>${names[2].skill_proficiencies}</p>`
+                backstoryEl.innerHTML = `<h3>Backstory:</h3> <p>${names[2].feature_desc}</p>`
+                imgCon.classList.add('scoundrel') && imgCon.classList.remove('conArtist', 'acolyte'); 
+                
+            }
+        })
+    })
+
+
+    
+    // dungeonApp.event = function(){
+        
+    // }
+    
+    // init Method
 dungeonApp.init = function(){
     dungeonApp.getName();
 }
+
+dungeonApp.init();
 
 
 // Step 1
@@ -115,4 +131,3 @@ dungeonApp.init = function(){
 
 // Reset the values.  
 
-dungeonApp.init()
