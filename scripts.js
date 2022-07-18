@@ -64,17 +64,18 @@ dungeonApp.getName = function(){
             if(userOptions.value === "Acolyte"){
                 skillsEl.innerHTML = `<h3>Skills:</h3> <p>${names[0].skill_proficiencies}</p>`
                 backstoryEl.innerHTML = `<h3>Backstory:</h3> <p>${names[0].feature_desc}</p>`
-                imgCon.classList.add('acolyte') && imgCon.classList.remove('scoundrel', "conArtist")
+                imgCon.classList.add('acolyte');
+                imgCon.classList.remove('conArtist', "scoundrel");
             }else if(userOptions.value === "Con Artist"){
                 skillsEl.innerHTML = `<h3>Skills:</h3> <p>${names[1].skill_proficiencies}</p>`
                 backstoryEl.innerHTML = `<h3>Backstory:</h3> <p>${names[1].feature_desc}</p>`
-                imgCon.classList.replace('acoltye', 'conArtist') 
-                
+                imgCon.classList.remove('acolyte', 'scoundrel');
+                imgCon.classList.add('conArtist');
             }else {
                 skillsEl.innerHTML = `<h3>Skills:</h3> <p>${names[2].skill_proficiencies}</p>`
                 backstoryEl.innerHTML = `<h3>Backstory:</h3> <p>${names[2].feature_desc}</p>`
-                imgCon.classList.add('scoundrel') && imgCon.classList.remove('conArtist', 'acolyte'); 
-                
+                imgCon.classList.remove('acolyte', 'conArtist');
+                imgCon.classList.add('scoundrel');
             }
         })
     })
