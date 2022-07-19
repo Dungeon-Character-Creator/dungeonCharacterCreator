@@ -1,0 +1,21 @@
+@media( max-width: 500px){
+
+    .backstory{
+        display: flex;
+        flex-direction: column;
+        p{
+            padding: 0 20px;
+        }
+    }
+
+    .imageContainer img{
+        height:120px;
+        width: 120px;
+    }
+
+    .characterCard{
+        width: 90%;
+    }
+
+
+}

@@ -24,6 +24,8 @@ dungeonApp.getName = function(){
             // console.log(userArray);
             dungeonApp.displayClasses(jsonResult.results);
             console.log(jsonResult.results);
+            
+            dungeonApp.event(jsonResult.results);
             return jsonResult.results;
         })
         
@@ -39,7 +41,14 @@ dungeonApp.getName = function(){
             optionEl.textContent = classes.name
             userOptions.appendChild(optionEl);
             const inputEl = document.querySelector('input')
-           dungeonApp.event(names);
+            dungeonApp.randomize()
+        })
+    }
+
+    dungeonApp.randomize = function(random){
+        const randomEl = document.querySelector(".randomize")
+        randomEl.addEventListener("click",function(e){
+            
         })
     }
 
@@ -52,6 +61,7 @@ dungeonApp.getName = function(){
             const pEl = document.createElement('p');
             pEl.textContent = nameChoice;
             nameChoice.innerHTML = `<h3>Name:</h3> <p>${inputEL.value}</p>`;
+
             const classChoice = document.querySelector('.className');
             classChoice.innerHTML = `<h3>Class:</h3> <p>${userOptions.value}</p>`;
     
@@ -61,6 +71,7 @@ dungeonApp.getName = function(){
             const imgCon = document.querySelector('.imageContainer');
 
             imgCon.appendChild(imgEl)
+            
     
             if(userOptions.value === "Acolyte"){
                 skillsEl.innerHTML = `<h3>Skills:</h3> <p>${names[0].skill_proficiencies}</p>`
@@ -75,11 +86,11 @@ dungeonApp.getName = function(){
                 imgEl.alt = "Armoured jester with a hawk"
                 
             }else {
+                
                 skillsEl.innerHTML = `<h3>Skills:</h3> <p>${names[2].skill_proficiencies}</p>`
                 backstoryEl.innerHTML = `<h3>Backstory:</h3> <p>${names[2].feature_desc}</p>`
                 imgEl.src = "./assets/scoundrel.jpg"
                 imgEl.alt = "Masked and caped warrior"
-               
             }
         })
     })
