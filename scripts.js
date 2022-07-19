@@ -57,25 +57,29 @@ dungeonApp.getName = function(){
     
             const skillsEl = document.querySelector(".skills")
             const backstoryEl = document.querySelector(".backstory")
+            const imgEl = document.createElement("img")
             const imgCon = document.querySelector('.imageContainer');
 
-
+            imgCon.appendChild(imgEl)
     
             if(userOptions.value === "Acolyte"){
                 skillsEl.innerHTML = `<h3>Skills:</h3> <p>${names[0].skill_proficiencies}</p>`
                 backstoryEl.innerHTML = `<h3>Backstory:</h3> <p>${names[0].feature_desc}</p>`
-                imgCon.classList.add('acolyte');
-                imgCon.classList.remove('conArtist', "scoundrel");
+                imgEl.src = "./assets/Acolyte.webp"
+                imgEl.alt = "Baddass warrior in robe holding a morning star"
+               
             }else if(userOptions.value === "Con Artist"){
                 skillsEl.innerHTML = `<h3>Skills:</h3> <p>${names[1].skill_proficiencies}</p>`
                 backstoryEl.innerHTML = `<h3>Backstory:</h3> <p>${names[1].feature_desc}</p>`
-                imgCon.classList.remove('acolyte', 'scoundrel');
-                imgCon.classList.add('conArtist');
+                imgEl.src = "./assets/conArtist.jpg"
+                imgEl.alt = "Armoured jester with a hawk"
+                
             }else {
                 skillsEl.innerHTML = `<h3>Skills:</h3> <p>${names[2].skill_proficiencies}</p>`
                 backstoryEl.innerHTML = `<h3>Backstory:</h3> <p>${names[2].feature_desc}</p>`
-                imgCon.classList.remove('acolyte', 'conArtist');
-                imgCon.classList.add('scoundrel');
+                imgEl.src = "./assets/scoundrel.jpg"
+                imgEl.alt = "Masked and caped warrior"
+               
             }
         })
     })

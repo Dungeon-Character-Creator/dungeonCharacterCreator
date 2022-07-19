@@ -26,36 +26,26 @@ main .wrapper{
     align-self: start;
 }
 
-.acolyte {
-    background-image: url(../assets/Acolyte.webp);
+.imageContainer img {
+    // background-image: url(../assets/Acolyte.webp);
     height: 180px;
-    width: 200px;
+    width: 170px;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
     position: absolute;
     top: 11px;
-    right: 0;
+    right: 10px;
+    box-shadow: 5px 5px 5px black;
 }
-.scoundrel {
-    background-image: url(../assets/scoundrel.jpg);
-    height: 180px;
-    width: 200px;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    position: absolute;
-    top: 11px;
-    right: 0;
-}
-.conArtist {
-    background-image: url(../assets/conArtist.jpg);
-    height: 180px;
-    width: 200px;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    position: absolute;
-    top: 11px;
-    right: 0;
+
+footer{
+    text-align: center;
+    background-color: rgb(55, 70, 55);
+    color:white;
+    padding:10px 0;
+    p{
+        font-family: 'Cinzel Decorative', cursive;
+        font-size: 0.9rem;
+    }
 }

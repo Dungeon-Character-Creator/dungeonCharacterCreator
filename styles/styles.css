@@ -254,7 +254,7 @@ button, input {
 main {
   background: -webkit-gradient(linear, left bottom, left top, from(#8b0000), color-stop(30%, #CC350B), color-stop(50%, #C16D42), to(#EDBF4A));
   background: linear-gradient(0deg, #8b0000, #CC350B 30%, #C16D42 50% orange 70%, #EDBF4A);
-  height: 1000px;
+  min-height: 70vh;
 }
 
 form, fieldset {
@@ -298,6 +298,14 @@ button {
   background-color: rgb(55, 70, 55);
   color: white;
   padding: 15px;
+  margin-bottom: 50px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+button:hover, button:focus {
+  background-color: white;
+  color: rgb(55, 70, 55);
+  border: 2px solid rgb(55, 70, 55);
 }
 
 select {
@@ -342,38 +350,26 @@ main .wrapper {
       align-self: start;
 }
 
-.acolyte {
-  background-image: url(../assets/Acolyte.webp);
+.imageContainer img {
   height: 180px;
-  width: 200px;
+  width: 170px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
   position: absolute;
   top: 11px;
-  right: 0;
+  right: 10px;
+  -webkit-box-shadow: 5px 5px 5px black;
+          box-shadow: 5px 5px 5px black;
 }
 
-.scoundrel {
-  background-image: url(../assets/scoundrel.jpg);
-  height: 180px;
-  width: 200px;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  position: absolute;
-  top: 11px;
-  right: 0;
+footer {
+  text-align: center;
+  background-color: rgb(55, 70, 55);
+  color: white;
+  padding: 10px 0;
 }
-
-.conArtist {
-  background-image: url(../assets/conArtist.jpg);
-  height: 180px;
-  width: 200px;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  position: absolute;
-  top: 11px;
-  right: 0;
+footer p {
+  font-family: "Cinzel Decorative", cursive;
+  font-size: 0.9rem;
 }

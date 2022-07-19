@@ -13,7 +13,15 @@ button{
     background-color: rgb(55, 70, 55);
     color: white;
     padding: 15px;
+    margin-bottom: 50px;
+    transition: 0.3s;
+    &:hover , &:focus{
+        background-color: white;
+        color:rgb(55, 70, 55);
+        border:2px solid rgb(55, 70, 55);
+    }
 }
+
 select {
     font-family:'Cinzel Decorative', cursive;
 }
