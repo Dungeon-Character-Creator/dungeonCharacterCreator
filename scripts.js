@@ -50,6 +50,7 @@ dungeonApp.getName = function(){
         buttonEl.addEventListener('click', function(e){
             e.preventDefault()
             const inputEL = document.querySelector('input')
+            
             const nameChoice = document.querySelector('.userName');
             const pEl = document.createElement('p');
             pEl.textContent = nameChoice;
@@ -84,6 +85,7 @@ dungeonApp.getName = function(){
                 imgEl.src = "./assets/scoundrel.jpg"
                 imgEl.alt = "Masked and caped warrior"
             }
+            inputEL.value = '';
         })
     })
 
