@@ -8,9 +8,13 @@
         }
     }
 
-    .imageContainer img{
+    .imageContainer {
+        text-align: center;
+     img{
         height:120px;
         width: 120px;
+        position: relative;
+        }
     }
 
     .characterCard{

@@ -265,7 +265,7 @@ header {
   background-image: url(../assets/heroimage-dnd.jpg);
   background-position: center;
   background-size: cover;
-  height: 30vh;
+  min-height: 30vh;
 }
 
 h1, h2 {
@@ -289,6 +289,8 @@ h1 span {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 button {
@@ -352,7 +354,6 @@ main .wrapper {
 
 .imageContainer img {
   height: 180px;
-  width: 170px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -361,6 +362,7 @@ main .wrapper {
   right: 10px;
   -webkit-box-shadow: 5px 5px 5px black;
           box-shadow: 5px 5px 5px black;
+  border-radius: 3px;
 }
 
 footer {
@@ -387,9 +389,13 @@ footer p {
   .backstory p {
     padding: 0 20px;
   }
+  .imageContainer {
+    text-align: center;
+  }
   .imageContainer img {
     height: 120px;
     width: 120px;
+    position: relative;
   }
   .characterCard {
     width: 90%;
