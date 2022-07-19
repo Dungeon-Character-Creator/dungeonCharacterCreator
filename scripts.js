@@ -41,22 +41,15 @@ dungeonApp.getName = function(){
             const classOption = document.querySelector('option');
             optionEl.textContent = classes.name
             userOptions.appendChild(optionEl);
-            dungeonApp.randomize()
         })
     }
 
-    dungeonApp.randomize = function(random){
-        const randomEl = document.querySelector(".randomize")
-        randomEl.addEventListener("click",function(e){
-            
-        })
-    }
+
 
     dungeonApp.event = (function(names){
         buttonEl.addEventListener('click', function(e){
             e.preventDefault()
             const inputEL = document.querySelector('input')
-            // console.log(inputEL.value);
             const nameChoice = document.querySelector('.userName');
             const pEl = document.createElement('p');
             pEl.textContent = nameChoice;
@@ -96,9 +89,7 @@ dungeonApp.getName = function(){
 
 
     
-    // dungeonApp.event = function(){
-        
-    // }
+
     
     // init Method
 dungeonApp.init = function(){
