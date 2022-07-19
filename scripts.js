@@ -46,48 +46,52 @@ dungeonApp.getName = function(){
 
 
 
+
     dungeonApp.event = (function(names){
         buttonEl.addEventListener('click', function(e){
             e.preventDefault()
             const inputEL = document.querySelector('input')
-            
             const nameChoice = document.querySelector('.userName');
             const pEl = document.createElement('p');
             pEl.textContent = nameChoice;
-            nameChoice.innerHTML = `<h3>Name:</h3> <p>${inputEL.value}</p>`;
-
-            const classChoice = document.querySelector('.className');
-            classChoice.innerHTML = `<h3>Class:</h3> <p>${userOptions.value}</p>`;
-            const skillsEl = document.querySelector(".skills")
-            const backstoryEl = document.querySelector(".backstory")
-            const imgEl = document.createElement("img")
-            const imgCon = document.querySelector('.imageContainer');
-            imgCon.innerHTML = '';
-
-            imgCon.appendChild(imgEl)
-            
-            
-            
-            if(userOptions.value === "Acolyte"){
-                skillsEl.innerHTML = `<h3>Skills:</h3> <p>${names[0].skill_proficiencies}</p>`
-                backstoryEl.innerHTML = `<h3>Backstory:</h3> <p>${names[0].feature_desc}</p>`
-                imgEl.src = "./assets/Acolyte.webp"
-                imgEl.alt = "Baddass warrior in robe holding a morning star"                
-            }else if(userOptions.value === "Con Artist"){
-                skillsEl.innerHTML = `<h3>Skills:</h3> <p>${names[1].skill_proficiencies}</p>`
-                backstoryEl.innerHTML = `<h3>Backstory:</h3> <p>${names[1].feature_desc}</p>`
-                imgEl.src = "./assets/conArtist.jpg"
-                imgEl.alt = "Armoured jester with a hawk"
-            }else {
+            if(inputEL.value){
+                nameChoice.innerHTML = `<h3>Name:</h3> <p>${inputEL.value}</p>`;
+                const classChoice = document.querySelector('.className');
+                classChoice.innerHTML = `<h3>Class:</h3> <p>${userOptions.value}</p>`;
+                const skillsEl = document.querySelector(".skills")
+                const backstoryEl = document.querySelector(".backstory")
+                const imgEl = document.createElement("img")
+                const imgCon = document.querySelector('.imageContainer');
+                imgCon.innerHTML = '';
+                imgCon.appendChild(imgEl)
+                if(userOptions.value === "Acolyte"){
+                    skillsEl.innerHTML = `<h3>Skills:</h3> <p>${names[0].skill_proficiencies}</p>`
+                    backstoryEl.innerHTML = `<h3>Backstory:</h3> <p>${names[0].feature_desc}</p>`
+                    imgEl.src = "./assets/Acolyte.webp"
+                    imgEl.alt = "Baddass warrior in robe holding a morning star"                
+                } else if(userOptions.value === "Con Artist"){
+                    skillsEl.innerHTML = `<h3>Skills:</h3> <p>${names[1].skill_proficiencies}</p>`
+                    backstoryEl.innerHTML = `<h3>Backstory:</h3> <p>${names[1].feature_desc}</p>`
+                    imgEl.src = "./assets/conArtist.jpg"
+                    imgEl.alt = "Armoured jester with a hawk"
+                } else {
+                    
+                    skillsEl.innerHTML = `<h3>Skills:</h3> <p>${names[2].skill_proficiencies}</p>`
+                    backstoryEl.innerHTML = `<h3>Backstory:</h3> <p>${names[2].feature_desc}</p>`
+                    imgEl.src = "./assets/scoundrel.jpg"
+                    imgEl.alt = "Masked and caped warrior"
+                }
+    
                 
-                skillsEl.innerHTML = `<h3>Skills:</h3> <p>${names[2].skill_proficiencies}</p>`
-                backstoryEl.innerHTML = `<h3>Backstory:</h3> <p>${names[2].feature_desc}</p>`
-                imgEl.src = "./assets/scoundrel.jpg"
-                imgEl.alt = "Masked and caped warrior"
+                inputEL.value = '';
+            } else {
+                alert("Please enter Character Name");
             }
-            inputEL.value = '';
         })
     })
+
+            
+
 
 
     

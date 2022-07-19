@@ -312,6 +312,7 @@ button:hover, button:focus {
 
 select {
   font-family: "Cinzel Decorative", cursive;
+  border: none;
 }
 
 input {
