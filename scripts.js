@@ -24,15 +24,24 @@ dungeonApp.getName = function(){
             // console.log(userArray);
             dungeonApp.displayClasses(jsonResult.results);
             console.log(jsonResult.results);
-            
+            dungeonApp.randomize(jsonResult.results);
             dungeonApp.event(jsonResult.results);
             return jsonResult.results;
         })
-        
     }
+        
     const userOptions = document.querySelector("#userClass");
     const buttonEl = document.querySelector('button');
-    const inputEl = document.querySelector('input')
+    const inputEl = document.querySelector('input');
+    const skillsEl = document.querySelector(".skills");
+    const backstoryEl = document.querySelector(".backstory")
+    const classChoice = document.querySelector('.className');
+    const nameChoice = document.querySelector('.userName');
+    const imgEl = document.createElement("img");
+    const imgCon = document.querySelector('.imageContainer');
+    const inputEL = document.querySelector('input')
+    const pEl = document.createElement('p');
+
     
     dungeonApp.displayClasses = function(names){
         names.forEach(classes => {
@@ -41,64 +50,71 @@ dungeonApp.getName = function(){
             const classOption = document.querySelector('option');
             optionEl.textContent = classes.name
             userOptions.appendChild(optionEl);
-            dungeonApp.randomize()
+            
         })
     }
 
-    dungeonApp.randomize = function(random){
+    dungeonApp.randomize = function(randomize){
         const randomEl = document.querySelector(".randomize")
         randomEl.addEventListener("click",function(e){
-            
+          const randomNumber = Math.floor(Math.random(randomize) * 3 )
+            console.log(randomNumber);
+            e.preventDefault()
+            if(randomNumber === 0){
+                userOptions.value = "Acolyte"
+            } else if (randomNumber === 1){
+                userOptions.value = "Con Artist"
+            } else {
+                userOptions.value = "Scoundrel"
+            }
+            dungeonApp.displayInfo(randomize);
         })
     }
 
     dungeonApp.event = (function(names){
         buttonEl.addEventListener('click', function(e){
             e.preventDefault()
-            const inputEL = document.querySelector('input')
-            // console.log(inputEL.value);
+            dungeonApp.displayInfo(names);
+        })
+    })
+            
+    dungeonApp.displayInfo = function(names){
+        imgCon.innerHTML = '';
+        imgCon.appendChild(imgEl)
+        if(inputEl.value){
             const nameChoice = document.querySelector('.userName');
             const pEl = document.createElement('p');
             pEl.textContent = nameChoice;
             nameChoice.innerHTML = `<h3>Name:</h3> <p>${inputEL.value}</p>`;
-
             const classChoice = document.querySelector('.className');
             classChoice.innerHTML = `<h3>Class:</h3> <p>${userOptions.value}</p>`;
-            const skillsEl = document.querySelector(".skills")
-            const backstoryEl = document.querySelector(".backstory")
-            const imgEl = document.createElement("img")
-            const imgCon = document.querySelector('.imageContainer');
-            imgCon.innerHTML = '';
-
-            imgCon.appendChild(imgEl)
-            
-            
-            
             if(userOptions.value === "Acolyte"){
                 skillsEl.innerHTML = `<h3>Skills:</h3> <p>${names[0].skill_proficiencies}</p>`
                 backstoryEl.innerHTML = `<h3>Backstory:</h3> <p>${names[0].feature_desc}</p>`
                 imgEl.src = "./assets/Acolyte.webp"
                 imgEl.alt = "Baddass warrior in robe holding a morning star"                
-            }else if(userOptions.value === "Con Artist"){
+            } else if(userOptions.value === "Con Artist"){
                 skillsEl.innerHTML = `<h3>Skills:</h3> <p>${names[1].skill_proficiencies}</p>`
                 backstoryEl.innerHTML = `<h3>Backstory:</h3> <p>${names[1].feature_desc}</p>`
                 imgEl.src = "./assets/conArtist.jpg"
                 imgEl.alt = "Armoured jester with a hawk"
-            }else {
+            } else {
                 
                 skillsEl.innerHTML = `<h3>Skills:</h3> <p>${names[2].skill_proficiencies}</p>`
                 backstoryEl.innerHTML = `<h3>Backstory:</h3> <p>${names[2].feature_desc}</p>`
                 imgEl.src = "./assets/scoundrel.jpg"
                 imgEl.alt = "Masked and caped warrior"
             }
-        })
-    })
+            inputEL.value = '';
+        } else {
+            alert("Please enter Character Name");
+        }
+    }
+    
 
 
     
-    // dungeonApp.event = function(){
-        
-    // }
+
     
     // init Method
 dungeonApp.init = function(){
