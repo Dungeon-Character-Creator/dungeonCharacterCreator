@@ -98,10 +98,16 @@ dungeonApp.getName = function(){
                 backstoryEl.innerHTML = `<h3>Backstory:</h3> <p>${names[1].feature_desc}</p>`
                 imgEl.src = "./assets/conArtist.jpg"
                 imgEl.alt = "Armoured jester with a hawk"
-            } 
+            } else {
+                skillsEl.innerHTML = `<h3>Skills:</h3> <p>${names[2].skill_proficiencies}</p>`
+                backstoryEl.innerHTML = `<h3>Backstory:</h3> <p>${names[2].feature_desc}</p>`
+                imgEl.src = "./assets/scoundrel.jpg"
+                imgEl.alt = "Masked and caped warrior"
+            }
             inputEL.value = '';
             } else {
             alert("Please enter Character Name");
+
         }
     }
     
