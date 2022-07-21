@@ -14,7 +14,6 @@ dungeonApp.getName = function(){
 
     fetch(url)
         .then(function (response) {
-            // console.log(response)
             return response.json();
             
         })
@@ -105,10 +104,12 @@ dungeonApp.getName = function(){
             inputEL.value = '';
             } else {
             alert("Please enter Character Name");
-
         }
     }
     
+
+            
+
 
             
 
