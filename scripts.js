@@ -19,9 +19,7 @@ dungeonApp.getName = function(){
             
         })
         .then(function (jsonResult) {
-            // console.log(jsonResult.results)
             const userArray = jsonResult.results;
-            // console.log(userArray);
             dungeonApp.displayClasses(jsonResult.results);
             console.log(jsonResult.results);
             dungeonApp.randomize(jsonResult.results);
