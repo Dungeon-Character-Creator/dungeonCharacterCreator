@@ -219,8 +219,7 @@ h1, h2, h3 {
 }
 
 h3 {
-  font-family: "Tangerine", cursive;
-  font-size: 2rem;
+  font-size: 1.25rem;
   display: inline;
 }
 
@@ -265,10 +264,10 @@ header {
   background-image: url(../assets/heroimage-dnd.jpg);
   background-position: center;
   background-size: cover;
-  min-height: 30vh;
+  min-height: 40vh;
 }
 
-h1, h2 {
+h1, h2, h3 {
   font-family: "Cinzel Decorative", cursive;
   color: white;
 }
@@ -291,6 +290,9 @@ h1 span {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 button {
@@ -303,6 +305,7 @@ button {
   margin-bottom: 50px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
+  border-radius: 6px;
 }
 button:hover, button:focus {
   background-color: white;
@@ -313,10 +316,17 @@ button:hover, button:focus {
 select {
   font-family: "Cinzel Decorative", cursive;
   border: none;
+  border-radius: 6px;
+}
+
+fieldset {
+  padding: 0;
 }
 
 input {
   border: none;
+  border-radius: 6px;
+  margin-bottom: 10px;
 }
 
 .characterCard {
@@ -329,7 +339,10 @@ input {
   position: relative;
 }
 .characterCard h3 {
-  padding: 10px;
+  padding: 15px;
+}
+.characterCard p {
+  padding: 15px 15px 15px 0;
 }
 
 main .wrapper {
@@ -354,7 +367,7 @@ main .wrapper {
 }
 
 .imageContainer img {
-  height: 180px;
+  height: 160px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -377,7 +390,7 @@ footer p {
   font-size: 0.9rem;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 666px) {
   .backstory {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -395,10 +408,14 @@ footer p {
   }
   .imageContainer img {
     height: 120px;
-    width: 120px;
     position: relative;
   }
   .characterCard {
     width: 90%;
+  }
+  .container {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }

@@ -5,6 +5,7 @@
 .container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 button{
@@ -16,6 +17,7 @@ button{
     padding: 15px;
     margin-bottom: 50px;
     transition: 0.3s;
+    border-radius: 6px;
     &:hover , &:focus{
         background-color: white;
         color:rgb(55, 70, 55);
@@ -26,8 +28,16 @@ button{
 select {
     font-family:'Cinzel Decorative', cursive;
     border: none;
+    border-radius: 6px;
+}
+
+fieldset{
+    padding:0;
 }
 
 input {
     border: none;
+    border-radius: 6px;
+    margin-bottom: 10px;
 }
+

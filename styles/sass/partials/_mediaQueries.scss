@@ -1,4 +1,4 @@
-@media( max-width: 500px){
+@media( max-width: 666px){
 
     .backstory{
         display: flex;
@@ -12,7 +12,6 @@
         text-align: center;
      img{
         height:120px;
-        width: 120px;
         position: relative;
         }
     }
@@ -21,5 +20,7 @@
         width: 90%;
     }
 
-
+    .container{
+        justify-content: center;
+    }
 }

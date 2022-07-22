@@ -1,15 +1,9 @@
 // create namespace
 const dungeonApp = {};
 
-// create a method to populate classOptions for the user to select
-
-
-
-
-
-
+// Get class names from API
 dungeonApp.getName = function () {
-    // step 1
+    // create a constant to store our API
     const url = "https://api.open5e.com/backgrounds/"
 
     fetch(url)
@@ -18,15 +12,14 @@ dungeonApp.getName = function () {
 
         })
         .then(function (jsonResult) {
-            const userArray = jsonResult.results;
             dungeonApp.displayClasses(jsonResult.results);
-            console.log(jsonResult.results);
             dungeonApp.randomize(jsonResult.results);
             dungeonApp.event(jsonResult.results);
             return jsonResult.results;
         })
 }
 
+//Query Select elements we will need
 const userOptions = document.querySelector("#userClass");
 const buttonEl = document.querySelector('button');
 const inputEl = document.querySelector('input');
@@ -34,23 +27,26 @@ const skillsEl = document.querySelector(".skills");
 const backstoryEl = document.querySelector(".backstory")
 const classChoice = document.querySelector('.className');
 const nameChoice = document.querySelector('.userName');
-const imgEl = document.createElement("img");
 const imgCon = document.querySelector('.imageContainer');
 const inputEL = document.querySelector('input')
+
+// Create an image Element and p element 
+const imgEl = document.createElement("img");
 const pEl = document.createElement('p');
 
 
+// Function to display classes on page
 dungeonApp.displayClasses = function (names) {
     names.forEach(classes => {
         // create an eventListener for select input and put in variable
         const optionEl = document.createElement("option")
-        const classOption = document.querySelector('option');
         optionEl.textContent = classes.name
         userOptions.appendChild(optionEl);
 
     })
 }
 
+// Creae a button that randomizes class for user
 dungeonApp.randomize = function (randomize) {
     const randomEl = document.querySelector(".randomize")
     randomEl.addEventListener("click", function (e) {
@@ -68,6 +64,7 @@ dungeonApp.randomize = function (randomize) {
     })
 }
 
+// create an event listener on the START YOUR JOURNEY button
 dungeonApp.event = (function (names) {
     buttonEl.addEventListener('click', function (e) {
         e.preventDefault()
@@ -75,9 +72,12 @@ dungeonApp.event = (function (names) {
     })
 })
 
+// Display users name, class, skills and backstory into Character Card
 dungeonApp.displayInfo = function (names) {
     imgCon.innerHTML = '';
     imgCon.appendChild(imgEl)
+
+    // Error Check if user has put in a name.
     if (inputEl.value) {
         const nameChoice = document.querySelector('.userName');
         const pEl = document.createElement('p');
@@ -85,6 +85,8 @@ dungeonApp.displayInfo = function (names) {
         nameChoice.innerHTML = `<h3>Name:</h3> <p>${inputEL.value}</p>`;
         const classChoice = document.querySelector('.className');
         classChoice.innerHTML = `<h3>Class:</h3> <p>${userOptions.value}</p>`;
+
+        // Create If Else statements to check for each class picked and get skills/backstory from API
         if (userOptions.value === "Acolyte") {
             skillsEl.innerHTML = `<h3>Skills:</h3> <p>${names[0].skill_proficiencies}</p>`
             backstoryEl.innerHTML = `<h3>Backstory:</h3> <p>${names[0].feature_desc}</p>`
@@ -102,21 +104,11 @@ dungeonApp.displayInfo = function (names) {
             imgEl.alt = "Masked and caped warrior"
         }
         inputEL.value = '';
+        // If user hasn't written name, Alert that they MUST!!!
     } else {
         alert("Please enter Character Name");
     }
 }
-
-
-
-
-
-
-
-
-
-
-
 
 // init Method
 dungeonApp.init = function () {
