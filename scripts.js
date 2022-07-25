@@ -42,7 +42,6 @@ dungeonApp.displayClasses = function (names) {
         const optionEl = document.createElement("option")
         optionEl.textContent = classes.name
         userOptions.appendChild(optionEl);
-
     })
 }
 
@@ -51,7 +50,6 @@ dungeonApp.randomize = function (randomize) {
     const randomEl = document.querySelector(".randomize")
     randomEl.addEventListener("click", function (e) {
         const randomNumber = Math.floor(Math.random(randomize) * 3)
-        console.log(randomNumber);
         e.preventDefault()
         if (randomNumber === 0) {
             userOptions.value = "Acolyte"
@@ -118,6 +116,8 @@ dungeonApp.init = function () {
 dungeonApp.init();
 
 
+
+// Psuedo Code!
 // Step 1
 // Create name space for our app
 
